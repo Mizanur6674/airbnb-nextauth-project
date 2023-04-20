@@ -2,14 +2,15 @@
 
 import { useCallback, useState } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
-import { signOut } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import useRegisterModal from "@/app/hooks/useRegisterModal";
+import useLoginModal from "@/app/hooks/useLoginModal";
 import MenuItem from "./MenuItem";
 
 const UserMenu = ({}) => {
   const router = useRouter();
   const registerModal = useRegisterModal();
+  const loginModal = useLoginModal();
   const [isOpen, setIsOpen] = useState(false);
   const toggleOpen = useCallback(() => {
     setIsOpen((value) => !value);
@@ -72,25 +73,7 @@ const UserMenu = ({}) => {
         >
           <div className="flex flex-col cursor-pointer">
             <>
-              <MenuItem
-                label="My trips"
-                onClick={() => router.push("/trips")}
-              />
-              <MenuItem
-                label="My favorites"
-                onClick={() => router.push("/favorites")}
-              />
-              <MenuItem
-                label="My reservations"
-                onClick={() => router.push("/reservations")}
-              />
-              <MenuItem
-                label="My properties"
-                onClick={() => router.push("/properties")}
-              />
-
-              <hr />
-              <MenuItem label="Logout" onClick={() => signOut()} />
+              <MenuItem label="Login" onClick={loginModal.onOpen} />
             </>
 
             <>
