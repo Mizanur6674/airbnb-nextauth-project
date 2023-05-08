@@ -35,7 +35,7 @@
     chalk "^2.0.0"
     js-tokens "^4.0.0"
 
-"@babel/runtime@^7.12.0", "@babel/runtime@^7.12.5", "@babel/runtime@^7.18.3", "@babel/runtime@^7.20.13", "@babel/runtime@^7.20.7", "@babel/runtime@^7.5.5", "@babel/runtime@^7.8.7":
+"@babel/runtime@^7.12.0", "@babel/runtime@^7.12.5", "@babel/runtime@^7.18.3", "@babel/runtime@^7.20.13", "@babel/runtime@^7.20.7", "@babel/runtime@^7.21.0", "@babel/runtime@^7.5.5", "@babel/runtime@^7.8.7":
   version "7.21.0"
   resolved "https://registry.npmjs.org/@babel/runtime/-/runtime-7.21.0.tgz"
   integrity sha512-xwII0//EObnq89Ji5AKYQaRYiW/nZ3llSv29d49IuxPhKbtJoLP+9QUUZ4nVragQVtaVGeZrpB+ZtG/Pdy/POw==
@@ -51,18 +51,18 @@
     "@babel/helper-validator-identifier" "^7.19.1"
     to-fast-properties "^2.0.0"
 
-"@cloudinary-util/url-loader@^3.0.0":
-  version "3.0.0"
-  resolved "https://registry.npmjs.org/@cloudinary-util/url-loader/-/url-loader-3.0.0.tgz"
-  integrity sha512-WIpVpt7eSHU3zZux4PSOb7qY1vCF9/0BNFP0qKlQsD/71r7hrzZZx2cHNNk8VSdYY7iNtXgsFmn3LXYaNdkC4Q==
+"@cloudinary-util/url-loader@^3.1.1":
+  version "3.3.0"
+  resolved "https://registry.npmjs.org/@cloudinary-util/url-loader/-/url-loader-3.3.0.tgz"
+  integrity sha512-wMOJ2vcnQlZyuN5BOfQBQRAucYSm961lXROJUhtLgvQU66WWiBNxgOpVfxAkDSxOAfBN89VHT7tGwhcf5pS8Cw==
   dependencies:
-    "@cloudinary-util/util" "2.0.0"
+    "@cloudinary-util/util" "2.0.1"
     "@cloudinary/url-gen" "^1.8.7"
 
-"@cloudinary-util/util@^2.0.0", "@cloudinary-util/util@2.0.0":
-  version "2.0.0"
-  resolved "https://registry.npmjs.org/@cloudinary-util/util/-/util-2.0.0.tgz"
-  integrity sha512-7WHFR7uIizW+MRLk+RhLVFQ6jzPKYrBZGICqy6s38hakj+zpXd4nISmMfKbZgwFTBp53oHRi8dW9G2kzXmVe3w==
+"@cloudinary-util/util@^2.0.1", "@cloudinary-util/util@2.0.1":
+  version "2.0.1"
+  resolved "https://registry.npmjs.org/@cloudinary-util/util/-/util-2.0.1.tgz"
+  integrity sha512-d2imgUjYTLjv8ZhZPMAts/uPbMvIE71X4I/5hwdY/7vM4BuFQoJMSyq+h2pW1z1MyGG9BOWBm70vp082lSrbEQ==
 
 "@cloudinary/transformation-builder-sdk@^1.2.7":
   version "1.2.7"
@@ -72,9 +72,9 @@
     "@cloudinary/url-gen" "^1.7.0"
 
 "@cloudinary/url-gen@^1.7.0", "@cloudinary/url-gen@^1.8.6", "@cloudinary/url-gen@^1.8.7":
-  version "1.9.2"
-  resolved "https://registry.npmjs.org/@cloudinary/url-gen/-/url-gen-1.9.2.tgz"
-  integrity sha512-LFL79Galcj8WZaXW6QOOt5LQVkioQdH7DR7blYcU9Zi0ae1y0L4Ujmr69RsUNshCNy/EdVAg0aVG/jjqKDnJsg==
+  version "1.10.0"
+  resolved "https://registry.npmjs.org/@cloudinary/url-gen/-/url-gen-1.10.0.tgz"
+  integrity sha512-J3V+gzT6Tepw9bMrR3prWVbW22cIFJtPS8Wkt1WFSZVHWpZx8/vv9ACHaxUmRqaSkjhX8ErsuzDY5YxdWnaCbw==
   dependencies:
     "@cloudinary/transformation-builder-sdk" "^1.2.7"
 
@@ -888,10 +888,12 @@ damerau-levenshtein@^1.0.8:
   resolved "https://registry.npmjs.org/damerau-levenshtein/-/damerau-levenshtein-1.0.8.tgz"
   integrity sha512-sdQSFB7+llfUcQHUQO3+B8ERRj0Oa4w9POWMI/puGtuf7gFywGmkaLCElnudfTiKZV+NvHqL0ifzdrI8Ro7ESA==
 
-date-fns@^2.16.1, date-fns@^2.29.3, "date-fns@2.0.0-alpha.7 || >=2.0.0":
-  version "2.29.3"
-  resolved "https://registry.npmjs.org/date-fns/-/date-fns-2.29.3.tgz"
-  integrity sha512-dDCnyH2WnnKusqvZZ6+jA1O51Ibt8ZMRNkDZdyAyK4YfbDwa/cEmuztzG5pk6hqlp9aSBPYcjOlktquahGwGeA==
+date-fns@^2.16.1, date-fns@^2.30.0, "date-fns@2.0.0-alpha.7 || >=2.0.0":
+  version "2.30.0"
+  resolved "https://registry.npmjs.org/date-fns/-/date-fns-2.30.0.tgz"
+  integrity sha512-fnULvOpxnC5/Vg3NCiWelDsLiUc9bRwAPs/+LfTLNvetFCtCTN+yQz15C/fs4AwX1R9K5GLtLfn8QW+dWisaAw==
+  dependencies:
+    "@babel/runtime" "^7.21.0"
 
 debug@^3.2.7:
   version "3.2.7"
@@ -2148,13 +2150,13 @@ next-auth@^4, next-auth@^4.22.1:
     preact-render-to-string "^5.1.19"
     uuid "^8.3.2"
 
-next-cloudinary@^4.0.1:
-  version "4.0.1"
-  resolved "https://registry.npmjs.org/next-cloudinary/-/next-cloudinary-4.0.1.tgz"
-  integrity sha512-aTjPr21UG9gja49TCAHbXq+8VluPUc/ceOdjGMhgWNUGiSR/MYU/4JLKhRSAuTUcmthYsWHcV9+NlBwrKLJX1w==
+next-cloudinary@^4.8.0:
+  version "4.8.0"
+  resolved "https://registry.npmjs.org/next-cloudinary/-/next-cloudinary-4.8.0.tgz"
+  integrity sha512-Jzn0xdIz3EfDTNp9Y7UqCAy/b0Z4T/W4zJMdMGjHXNMHS3nNflVbd9jx5An9ZwYrW94WDJ7FScqWdmUt6Olfiw==
   dependencies:
-    "@cloudinary-util/url-loader" "^3.0.0"
-    "@cloudinary-util/util" "^2.0.0"
+    "@cloudinary-util/url-loader" "^3.1.1"
+    "@cloudinary-util/util" "^2.0.1"
     "@cloudinary/url-gen" "^1.8.6"
 
 next-superjson-plugin@^0.5.6:

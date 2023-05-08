@@ -14,6 +14,9 @@ body,
 .leaflet-top {
   z-index: 0 !important;
 }
+.sb {
+  @apply border border-red-500;
+}
 
 .rdrMonth {
   width: 100% !important;

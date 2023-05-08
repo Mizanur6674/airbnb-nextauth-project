@@ -105,7 +105,7 @@ const LoginModal = () => {
         "
       >
         <p>
-          Already have an account?
+          Don&apose;t have an account?
           <span
             onClick={onToggle}
             className="
@@ -114,7 +114,7 @@ const LoginModal = () => {
               hover:underline
             "
           >
-            Login
+            Register
           </span>
         </p>
       </div>

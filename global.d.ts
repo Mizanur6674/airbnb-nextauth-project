@@ -1,7 +1,7 @@
-import type { PrismaClient } from "@prisma/client";
+// import type { PrismaClient } from "@prisma/client";
 
-declare global {
-  namespace globalThis {
-    var prisma: PrismaClient;
-  }
-}
+// declare global {
+//   namespace globalThis {
+//     var prisma: PrismaClient;
+//   }
+// }
