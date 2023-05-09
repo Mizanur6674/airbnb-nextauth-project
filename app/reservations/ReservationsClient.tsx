@@ -30,7 +30,10 @@ const ReservationsClient: React.FC<ReservationsClientProps> = ({
         .promise(axios.delete(`/api/reservations/${id}`), {
           error: "Something went wrong",
           loading: "Cancelling...",
-          success: "Reservations Cancelled",
+          success: () => {
+            router.refresh();
+            return "Reservations Cancelled";
+          },
         })
         .finally(() => {
           setDeletingId("");

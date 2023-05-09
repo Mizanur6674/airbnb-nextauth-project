@@ -58,29 +58,41 @@ const ListingClient: React.FC<ListingClientProps> = ({
   const [totalPrice, setTotalPrice] = useState(listing.price);
   const [dateRange, setDateRange] = useState<Range>(initialDateRange);
 
-  const onCreatReservation = useCallback(() => {
+  const onCreatReservation = useCallback(async () => {
     if (!currentUser) {
       return loginModal.onOpen();
     }
     setIsLoading(true);
 
-    axios
-      .post("/api/reservations", {
-        totalPrice,
-        startDate: dateRange.startDate,
-        endDate: dateRange.endDate,
-        listingId: listing?.id,
-      })
+    await toast
+      .promise(
+        axios.post("/api/reservations", {
+          totalPrice,
+          startDate: dateRange.startDate,
+          endDate: dateRange.endDate,
+          listingId: listing?.id,
+        }),
+        {
+          error: "Something went wrong",
+          loading: "Reserving...",
+          success: () => {
+            setDateRange(initialDateRange);
+            router.push("/trips");
+            router.refresh();
+            return "listing reserved";
+          },
+        }
+      )
 
-      .then(() => {
-        toast.success("listing reserved");
-        setDateRange(initialDateRange);
-        router.push("/trips");
-        router.refresh();
-      })
-      .catch(() => {
-        toast.error("Something went wrong");
-      })
+      // .then(() => {
+      //   toast.success("listing reserved");
+      //   setDateRange(initialDateRange);
+      //   router.push("/trips");
+      //   router.refresh();
+      // })
+      // .catch(() => {
+      //   toast.error("Something went wrong");
+      // })
       .finally(() => {
         setIsLoading(false);
       });

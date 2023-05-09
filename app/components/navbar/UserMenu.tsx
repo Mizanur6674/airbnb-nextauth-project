@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState, useRef } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 import { useRouter } from "next/navigation";
 import useRegisterModal from "@/app/hooks/useRegisterModal";
@@ -10,6 +10,7 @@ import { signOut } from "next-auth/react";
 import { SafeUser } from "@/app/types";
 import Avatar from "../Avatar";
 import useRentModal from "@/app/hooks/useRentModal";
+
 interface UserMenuProps {
   currentUser?: SafeUser | null;
 }
@@ -20,9 +21,20 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
   const loginModal = useLoginModal();
   const rentModal = useRentModal();
   const [isOpen, setIsOpen] = useState(false);
+
   const toggleOpen = useCallback(() => {
     setIsOpen((value) => !value);
   }, []);
+
+  const menuRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    document.addEventListener("mousedown", (event: any) => {
+      if (!menuRef.current?.contains(event.target)) {
+        setIsOpen(false);
+      }
+    });
+  });
 
   const onRent = useCallback(() => {
     if (!currentUser) {
@@ -32,7 +44,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
   }, [currentUser, loginModal, rentModal]);
 
   return (
-    <div className="relative">
+    <div ref={menuRef} className="relative">
       <div className="flex flex-row items-center gap-3">
         <div
           onClick={onRent}

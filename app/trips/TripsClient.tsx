@@ -27,7 +27,10 @@ const TripsClient: React.FC<TripsClientProps> = ({
         .promise(axios.delete(`/api/reservations/${id}`), {
           error: "Somethingn went wrong",
           loading: "Cancelling...",
-          success: "Reservation Cancelled",
+          success: () => {
+            router.refresh();
+            return "Reservation Cancelled";
+          },
         })
         .finally(() => {
           setDeletingId("");
